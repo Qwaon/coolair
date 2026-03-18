@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AcCard from "@/components/AcCard";
 import LeadForm from "@/components/LeadForm";
 import { acModels } from "@/data/ac-models";
@@ -32,7 +33,7 @@ export default function CatalogPage() {
             <p className="text-slate-500 text-sm">
               Доступно моделей: {acModels.length}
             </p>
-            <a
+            <Link
               href="/calculator"
               className="text-blue-600 text-sm font-medium hover:text-blue-700 flex items-center gap-1.5 transition-colors"
             >
@@ -40,7 +41,7 @@ export default function CatalogPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Подобрать через калькулятор
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
