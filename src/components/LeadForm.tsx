@@ -18,7 +18,7 @@ interface Errors {
 }
 
 export default function LeadForm() {
-  const [form, setForm] = useState<FormState>({ name: "", phone: "" });
+  const [form, setForm] = useState<FormState>({ name: "", phone: "+7 " });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -59,19 +59,18 @@ export default function LeadForm() {
     }
 
     setStatus("success");
-    setForm({ name: "", phone: "" });
+    setForm({ name: "", phone: "+7 " });
   };
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "");
-    if (digits.length === 0) return "";
-    if (digits.length <= 1) return `+${digits}`;
-    if (digits.length <= 4) return `+${digits[0]} (${digits.slice(1)}`;
-    if (digits.length <= 7)
-      return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
-    if (digits.length <= 9)
-      return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
-    return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9, 11)}`;
+    // всегда начинаем с 7
+    const d = digits.startsWith("7") ? digits : "7" + digits.replace(/^8/, "");
+    if (d.length <= 1) return "+7 ";
+    if (d.length <= 4) return `+7 (${d.slice(1)}`;
+    if (d.length <= 7) return `+7 (${d.slice(1, 4)}) ${d.slice(4)}`;
+    if (d.length <= 9) return `+7 (${d.slice(1, 4)}) ${d.slice(4, 7)}-${d.slice(7)}`;
+    return `+7 (${d.slice(1, 4)}) ${d.slice(4, 7)}-${d.slice(7, 9)}-${d.slice(9, 11)}`;
   };
 
   if (status === "error") {
@@ -154,7 +153,7 @@ export default function LeadForm() {
         <Input
           id="phone"
           type="tel"
-          placeholder="+7 (___) ___-__-__"
+          placeholder="(___) ___-__-__"
           value={form.phone}
           onChange={(e) => {
             setForm((p) => ({ ...p, phone: formatPhone(e.target.value) }));
