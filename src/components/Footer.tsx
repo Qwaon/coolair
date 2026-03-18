@@ -12,7 +12,7 @@ export default function Footer() {
                 <span className="text-white text-sm font-bold">❄</span>
               </div>
               <span className="font-bold text-white text-lg">
-                CoolAir Pro
+                ClimaTech07
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-pretty">
@@ -106,11 +106,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-          <p>© {new Date().getFullYear()} CoolAir Pro. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} ClimaTech07. Все права защищены.</p>
           <p>
-            <a href="/#contact" className="hover:text-white transition-colors">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Политика конфиденциальности
-            </a>
+            </Link>
           </p>
         </div>
       </div>

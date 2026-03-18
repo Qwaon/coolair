@@ -40,7 +40,7 @@ export default function Navbar() {
               <span className="text-white text-sm font-bold">❄</span>
             </div>
             <span className="font-bold text-slate-900 text-lg">
-              CoolAir Pro
+              ClimaTech07
             </span>
           </Link>
 

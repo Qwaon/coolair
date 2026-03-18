@@ -3,7 +3,7 @@ import Calculator from "@/components/Calculator";
 import LeadForm from "@/components/LeadForm";
 
 export const metadata: Metadata = {
-  title: "Калькулятор кондиционера — CoolAir Pro",
+  title: "Калькулятор кондиционера — ClimaTech07",
   description:
     "Подберите кондиционер под площадь и бюджет. Введите данные — получите рекомендацию мгновенно.",
 };

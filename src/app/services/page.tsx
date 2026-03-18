@@ -27,7 +27,7 @@ const serviceIcons: Record<string, ReactNode> = {
 };
 
 export const metadata: Metadata = {
-  title: "Услуги — CoolAir Pro",
+  title: "Услуги — ClimaTech07",
   description:
     "Монтаж кондиционеров, алмазное бурение, резка и обслуживание в Москве. Профессиональный сервис с гарантией.",
 };

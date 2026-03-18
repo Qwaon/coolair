@@ -4,7 +4,7 @@ import LeadForm from "@/components/LeadForm";
 import { acModels } from "@/data/ac-models";
 
 export const metadata: Metadata = {
-  title: "Каталог кондиционеров — CoolAir Pro",
+  title: "Каталог кондиционеров — ClimaTech07",
   description:
     "Каталог сплит-систем от 2 до 7 кВт для любого помещения. Выберите модель и закажите монтаж.",
 };
