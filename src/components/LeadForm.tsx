@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { TG_BOT_TOKEN, TG_CHAT_ID } from "@/lib/tg";
 
 interface FormState {
   name: string;
@@ -40,20 +41,17 @@ export default function LeadForm() {
 
     setStatus("loading");
 
-    const token = process.env.NEXT_PUBLIC_TG_BOT_TOKEN;
-    const chatId = process.env.NEXT_PUBLIC_TG_CHAT_ID;
-
-    if (token && chatId) {
+    if (TG_BOT_TOKEN && TG_CHAT_ID) {
       const text =
         `📥 Новая заявка с сайта ClimaTech07\n\n` +
         `👤 Имя: ${form.name}\n` +
         `📞 Телефон: ${form.phone}`;
 
       try {
-        const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: chatId, text }),
+          body: JSON.stringify({ chat_id: TG_CHAT_ID, text }),
         });
         const data = await res.json();
         if (!data.ok) {
@@ -67,7 +65,7 @@ export default function LeadForm() {
         return;
       }
     } else {
-      console.warn("Telegram env vars not set:", { token: !!token, chatId: !!chatId });
+      console.warn("Telegram config not set");
     }
 
     setStatus("success");
