@@ -22,7 +22,7 @@ export default function StickyContact() {
     >
       {/* WhatsApp */}
       <a
-        href="https://wa.me/79963001787"
+        href="https://wa.me/79993001787"
         target="_blank"
         rel="noopener noreferrer"
         className="size-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg"
@@ -36,7 +36,7 @@ export default function StickyContact() {
 
       {/* Phone */}
       <a
-        href="tel:+79963001787"
+        href="tel:+79993001787"
         className="size-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg"
         aria-label="Call us"
       >

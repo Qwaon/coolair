@@ -82,10 +82,10 @@ export default function PrivacyPage() {
             <p className="mt-3">
               Для этого свяжитесь с нами по телефону{" "}
               <a
-                href="tel:+79963001787"
+                href="tel:+79993001787"
                 className="text-blue-600 hover:underline"
               >
-                +7 (996) 300-17-87
+                +7 (999) 300-17-87
               </a>{" "}
               или через WhatsApp.
             </p>
@@ -99,10 +99,10 @@ export default function PrivacyPage() {
               <br />
               Телефон:{" "}
               <a
-                href="tel:+79963001787"
+                href="tel:+79993001787"
                 className="text-blue-600 hover:underline"
               >
-                +7 (996) 300-17-87
+                +7 (999) 300-17-87
               </a>
             </p>
           </Section>

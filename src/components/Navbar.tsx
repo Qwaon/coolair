@@ -60,7 +60,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-2">
             <a
-              href="tel:+79963001787"
+              href="tel:+79993001787"
               className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors"
             >
               <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -69,7 +69,7 @@ export default function Navbar() {
               Позвонить
             </a>
             <a
-              href="https://wa.me/79963001787"
+              href="https://wa.me/79993001787"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 h-8 px-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full transition-colors"
@@ -114,13 +114,13 @@ export default function Navbar() {
             ))}
             <div className="pt-2 pb-1 flex gap-2">
               <a
-                href="tel:+79963001787"
+                href="tel:+79993001787"
                 className="flex-1 text-center py-2.5 text-sm font-medium border border-slate-200 rounded-xl text-slate-700"
               >
                 📞 Позвонить
               </a>
               <a
-                href="https://wa.me/79963001787"
+                href="https://wa.me/79993001787"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 text-center py-2.5 text-sm font-medium bg-blue-600 text-white rounded-xl"

@@ -119,7 +119,7 @@ export default function HomePage() {
               Подобрать кондиционер
             </Link>
             <a
-              href="tel:+79963001787"
+              href="tel:+79993001787"
               className="inline-flex items-center justify-center h-12 sm:h-14 px-5 sm:px-8 rounded-full text-sm sm:text-base font-semibold border border-slate-200 hover:border-slate-300 bg-white/80 hover:bg-white transition-colors"
             >
               <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -135,11 +135,11 @@ export default function HomePage() {
               <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              +7 (996) 300-17-87
+              +7 (999) 300-17-87
             </span>
             <span className="text-slate-200">·</span>
             <a
-              href="https://wa.me/79963001787"
+              href="https://wa.me/79993001787"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-slate-600 transition-colors"
