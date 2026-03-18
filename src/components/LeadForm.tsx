@@ -35,7 +35,7 @@ export default function LeadForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -48,19 +48,13 @@ export default function LeadForm() {
         `📞 Телефон: ${form.phone}`;
 
       try {
-        const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+        await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
           method: "POST",
+          mode: "no-cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ chat_id: TG_CHAT_ID, text }),
         });
-        const data = await res.json();
-        if (!data.ok) {
-          console.error("Telegram error:", data);
-          setStatus("error");
-          return;
-        }
-      } catch (err) {
-        console.error("Telegram fetch error:", err);
+      } catch {
         setStatus("error");
         return;
       }
