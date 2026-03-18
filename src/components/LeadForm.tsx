@@ -40,9 +40,21 @@ export default function LeadForm() {
 
     setStatus("loading");
 
-    // Mock API call
-    await new Promise((r) => setTimeout(r, 1200));
-    console.log("Lead submitted:", form);
+    const token = process.env.NEXT_PUBLIC_TG_BOT_TOKEN;
+    const chatId = process.env.NEXT_PUBLIC_TG_CHAT_ID;
+
+    if (token && chatId) {
+      const text =
+        `📥 Новая заявка с сайта ClimaTech07\n\n` +
+        `👤 Имя: ${form.name}\n` +
+        `📞 Телефон: ${form.phone}`;
+
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text }),
+      }).catch(() => null);
+    }
 
     setStatus("success");
     setForm({ name: "", phone: "" });
