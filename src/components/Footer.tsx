@@ -9,7 +9,11 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="size-8 bg-blue-600 rounded-xl flex items-center justify-center">
-                <span className="text-white text-sm font-bold">❄</span>
+                <svg className="size-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                  <rect x="2" y="6" width="20" height="9" rx="2" strokeLinejoin="round" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 19h12M8 15v4M16 15v4" />
+                  <path strokeLinecap="round" d="M7 10h10" />
+                </svg>
               </div>
               <span className="font-bold text-white text-lg">
                 ClimaTech07
@@ -106,7 +110,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-          <p>© {new Date().getFullYear()} ClimaTech07. Все права защищены.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} ClimaTech07. Все права защищены.</p>
+            <span className="hidden sm:inline text-slate-700">·</span>
+            <p className="text-slate-500">ООО «Ибражь»</p>
+          </div>
           <p>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Политика конфиденциальности
