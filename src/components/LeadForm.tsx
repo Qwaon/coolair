@@ -49,11 +49,25 @@ export default function LeadForm() {
         `👤 Имя: ${form.name}\n` +
         `📞 Телефон: ${form.phone}`;
 
-      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text }),
-      }).catch(() => null);
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text }),
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          console.error("Telegram error:", data);
+          setStatus("error");
+          return;
+        }
+      } catch (err) {
+        console.error("Telegram fetch error:", err);
+        setStatus("error");
+        return;
+      }
+    } else {
+      console.warn("Telegram env vars not set:", { token: !!token, chatId: !!chatId });
     }
 
     setStatus("success");
@@ -71,6 +85,32 @@ export default function LeadForm() {
       return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
     return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9, 11)}`;
   };
+
+  if (status === "error") {
+    return (
+      <div className="text-center py-10">
+        <div className="size-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="size-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <h3 className="text-xl font-bold text-slate-900 mb-2 text-balance">Ошибка отправки</h3>
+        <p className="text-slate-500 mb-6 text-pretty text-sm">
+          Не удалось отправить заявку. Позвоните нам напрямую:
+        </p>
+        <a
+          href="tel:+79993001787"
+          className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mb-4"
+        >
+          +7 (999) 300-17-87
+        </a>
+        <br />
+        <Button variant="outline" onClick={() => setStatus("idle")} className="rounded-xl mt-4">
+          Попробовать снова
+        </Button>
+      </div>
+    );
+  }
 
   if (status === "success") {
     return (
