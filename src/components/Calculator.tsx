@@ -178,7 +178,9 @@ export default function Calculator() {
             </>
           ) : (
             <div className="text-center py-12 bg-white rounded-2xl border border-slate-100">
-              <p className="text-4xl mb-4">🔍</p>
+              <svg className="size-10 text-slate-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
               <p className="text-slate-700 font-semibold text-lg mb-2 text-balance">
                 Ничего не найдено
               </p>

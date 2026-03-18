@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { AcModel } from "@/types";
@@ -10,17 +11,18 @@ interface Props {
 }
 
 export default function AcCard({ model }: Props) {
-  const formatPrice = (p: number) =>
-    "₽" + p.toLocaleString("ru-RU");
+  const router = useRouter();
+
+  const formatPrice = (p: number) => "₽" + p.toLocaleString("ru-RU");
 
   const handleOrder = () => {
     const el = document.getElementById("contact");
     if (el) el.scrollIntoView({ behavior: "smooth" });
-    else window.location.href = "/#contact";
+    else router.push("/#contact");
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:border-blue-100 hover:shadow-md transition-[border-color,box-shadow]">
       {/* Image */}
       <div className="relative h-44 sm:h-52 overflow-hidden bg-slate-100">
         <Image
@@ -52,14 +54,16 @@ export default function AcCard({ model }: Props) {
         {/* Specs */}
         <div className="flex gap-3 text-xs sm:text-sm text-slate-600 mb-4">
           <div className="flex items-center gap-1.5">
-            <span className="text-blue-500">❄</span>
+            <svg className="size-3.5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07" />
+            </svg>
             <span className="tabular-nums">Блок {model.btu}</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">⬚</span>
-            <span className="tabular-nums">
-              {model.roomMin}–{model.roomMax} м²
-            </span>
+            <svg className="size-3.5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            </svg>
+            <span className="tabular-nums">{model.roomMin}–{model.roomMax} м²</span>
           </div>
         </div>
 
@@ -81,7 +85,7 @@ export default function AcCard({ model }: Props) {
           onClick={handleOrder}
           className="mt-auto w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold"
         >
-          <svg className="size-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <svg className="size-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
           Заказать монтаж
