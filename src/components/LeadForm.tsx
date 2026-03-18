@@ -48,12 +48,8 @@ export default function LeadForm() {
         `📞 Телефон: ${form.phone}`;
 
       try {
-        await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: TG_CHAT_ID, text }),
-        });
+        const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${TG_CHAT_ID}&text=${encodeURIComponent(text)}`;
+        await fetch(url, { mode: "no-cors" });
       } catch {
         setStatus("error");
         return;
