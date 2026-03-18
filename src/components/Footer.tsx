@@ -8,15 +8,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="size-8 bg-blue-600 rounded-xl flex items-center justify-center">
-                <svg className="size-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-                  <rect x="2" y="6" width="20" height="9" rx="2" strokeLinejoin="round" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 19h12M8 15v4M16 15v4" />
-                  <path strokeLinecap="round" d="M7 10h10" />
-                </svg>
-              </div>
-              <span className="font-bold text-white text-lg">
-                ClimaTech07
+              <span className="font-bold text-lg tracking-tight">
+                <span className="text-blue-400">Clima</span><span className="text-white">Tech</span><span className="text-blue-400">07</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-pretty">
