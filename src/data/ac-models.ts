@@ -206,7 +206,7 @@ export const services: Service[] = [
       "Тест-запуск и сдача объекта",
       "Гарантия на монтаж 12 месяцев",
     ],
-    price: "от ₽4 500",
+    price: "от ₽9 500",
   },
   {
     id: "drilling",
@@ -221,7 +221,7 @@ export const services: Service[] = [
       "Пылесос — защита от пыли",
       "Выезд в день обращения",
     ],
-    price: "от ₽2 000",
+    price: "от ₽2 500",
   },
   {
     id: "cutting",
@@ -261,41 +261,41 @@ export const portfolioItems = [
     title: "Монтаж в гостиной",
     type: "Установка кондиционера",
     image:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "https://i.1.creatium.io/disk2/59/c3/e7/8570d87ee2c877ba7b221264228e4b9b91/ulrm4k4q6xljlruyzcq.webp",
   },
   {
     id: "p2",
     title: "Климат в офисе",
     type: "Коммерческий объект",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "https://splitmontaj.ru/wp-content/uploads/2005/09/ustanovka-konditsionera-v-ofise.webp",
   },
   {
     id: "p3",
     title: "Алмазное бурение",
     type: "Алмазное бурение",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "https://mskdemontazh.ru/wp-content/uploads/2021/02/burenie-bolshogo-diametra.jpg",
   },
   {
     id: "p4",
     title: "Кассетный кондиционер в спальне",
     type: "Установка кондиционера",
     image:
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://vsekondicioneri.ru/wa-data/public/photos/31/01/131/131.970.jpg",
   },
   {
     id: "p5",
     title: "Вентиляция ресторана",
     type: "Коммерческий объект",
     image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+      "https://vetrodom.ru/wa-data/public/blog/ewblogpimg/810/1/3697a2cc681dc51.53209190_1200x0.webp",
   },
   {
     id: "p6",
-    title: "Бурение бетонной плиты",
-    type: "Алмазное бурение",
+    title: "Алмазная резка",
+    type: "Алмазная резка оконных проёмов",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+      "https://almaztehrez.ru/wp-content/uploads/2025/10/photo_2025-10-15_16-23-45.jpg.webp",
   },
 ];
