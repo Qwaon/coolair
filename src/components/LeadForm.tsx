@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import { TG_BOT_TOKEN, TG_CHAT_ID } from "@/lib/tg";
+import { TG_BOT_TOKEN, TG_CHAT_IDS } from "@/lib/tg";
 
 interface FormState {
   name: string;
@@ -41,15 +41,19 @@ export default function LeadForm() {
 
     setStatus("loading");
 
-    if (TG_BOT_TOKEN && TG_CHAT_ID) {
+    if (TG_BOT_TOKEN && TG_CHAT_IDS.length > 0) {
       const text =
         `📥 Новая заявка с сайта ClimaTech07\n\n` +
         `👤 Имя: ${form.name}\n` +
         `📞 Телефон: ${form.phone}`;
 
       try {
-        const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${TG_CHAT_ID}&text=${encodeURIComponent(text)}`;
-        await fetch(url, { mode: "no-cors" });
+        await Promise.all(
+          TG_CHAT_IDS.map((chatId) => {
+            const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
+            return fetch(url, { mode: "no-cors" });
+          })
+        );
       } catch {
         setStatus("error");
         return;
